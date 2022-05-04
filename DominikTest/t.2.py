@@ -18,33 +18,34 @@ def pali_led(x):
     a.on()
     sleep(1)
     a.off()
-
-numbers = []
+    sleep(0.5)
 
 # generiranje radnom brojeva
+numbers = []
+
 def random_br():
-    for x in "sasa":
+    for x in range(4):
         n = random.randint(1,4)
         numbers.append(n)
     for x in numbers:
         pali_led(x)
 
-random_br()
-print(numbers)
-# string - array
-print("Upisite kako su se palile lampice")
-brojevi = input()
-brojevi_arr = []
-for x in brojevi:
-    brojevi_arr.append(int(x))
+# random_br()
 
-while numbers == brojevi_arr:
+# # string - array
+# print("Upisite kako su se palile lampice")
+# brojevi = input()
+# brojevi_arr = []
+# for x in brojevi:
+#     brojevi_arr.append(int(x))
+
+while True:
     random_br()
     print("Upisite kako su se palile lampice")
     brojevi = input()
     brojevi_arr = []
     for x in brojevi:
         brojevi_arr.append(int(x))
-
-if numbers != brojevi_arr:
-    print("Krivo ste brojeve upisali! Game over!")
+    if numbers != brojevi_arr:
+        break
+        print("Krivo ste brojeve upisali! Game over!")
